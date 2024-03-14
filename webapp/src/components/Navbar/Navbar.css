@@ -1,61 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
-    --light-theme-navbar: #292929;
-    --side-navbar-width: 160px;
+    --text-color:#3B3B3B;
 }
 
-/* top navbar */
-.top-navbar{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.navbar-container{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+
+
+    z-index: 9999;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    border-bottom: 1px solid #EDEDED;
+
+
 }
 
-.top-navbar a{
-    border-bottom: 2px transparent solid;
-}
-
-.top-navbar .active{
-    border-bottom: 2px #292929 solid;
-    border-radius: 2px;
-}
-
-/* side-navbar */
-.side-navbar{
-    display: none;
-}
-.burger-menu{
-    width: 40px;
-    height: 28px;
+.burger-menu-logo{
+    width: 26px;
+    height: 26px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 5px 6px;
-
-    position: absolute;
-    left: var(--side-navbar-width);
-}
-.side-navbar .burger-menu .burger-menu-bar{
-    background-color: var(--light-theme-navbar);
-    height: 2px;
-    border-radius: 2px;
-    width: 100%;
-}
-.side-navbar-main-content{
-    width: var(--side-navbar-width);
-    height: 100dvh;
-    background-color: var(--light-theme-navbar);
-    position: fixed;
-    transition: 0.5s;
+    
+    justify-content: center;
+    gap: 3px;
 }
 
-.side-navbar .active{
-    background: #3e3e3e;
-
+.burger-menu-logo div{
+    width: 26px;
+    height: 4px;
+    background-color: var(--text-color) ;
+    border-radius: 5px;
 }
 
-@media (max-width:1200px) {
-    .side-navbar{
-        display:block;
-    }
-    .top-navbar{
-        display: none;
-    }
+.burger-menu-logo div.second{
+    width: 15px;
+    height: 4px;
+    background-color: var(--text-color);
+    border-radius: 5px;
 }

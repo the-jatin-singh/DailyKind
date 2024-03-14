@@ -1,0 +1,32 @@
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.footer-main{
+    width: 60vw;
+    height: 66px;
+    background-color: white;
+    border-radius: 23px;
+    border: 1px solid #EDEDED;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    font-size: 25px;
+}
+
+.footer-main>*{
+    color: rgb(197, 197, 197);
+}
+
+.footer-main .active{
+    color: #3B3B3B;
+
+}

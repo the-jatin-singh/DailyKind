@@ -1,16 +1,18 @@
-import { NavLink } from 'react-router-dom';
-import React, { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { IoMdHome } from "react-icons/io";
 import { FaLightbulb } from "react-icons/fa";
 import { MdLiveHelp } from "react-icons/md";
+import { GoBellFill } from "react-icons/go";
 import './Navbar.css';
+import UserContext from '../../context/User/UserContext';
 
 
 const Navbar = () => {
 
-    const [navbarOpen, setNavbarOpen] = useState(false)
-
-    const NavLinks = [
+    const {user} = useContext(UserContext)
+    
+    const NavLinks = useMemo(()=> [
         {
             id:1,
             title:"Home",
@@ -32,7 +34,9 @@ const Navbar = () => {
             icon: MdLiveHelp,
             color:"#3b82f6",
         },
-    ]
+    ])
+    
+    const [navbarOpen, setNavbarOpen] = useState(false)
 
     const onNavbarClick = () => {
         setNavbarOpen((prev)=>!prev)
@@ -43,42 +47,23 @@ const Navbar = () => {
     }
 
   return (
-    <div>
-        <div className="top-navbar">
-            <nav className='flex justify-between px-3 py-2'>
-                <h1>DailyKind</h1>
-                <div className='flex items-center gap-10'>
-                    {NavLinks.map((link)=>(
-                            <NavLink to={link.link} key={link.id}>{link.title}</NavLink>
-                    ))}
-                </div>
-                <button onClick={onLogout} className=''>Logout</button>
-            </nav>
+    <div className='navbar-container'>
+        <div className='burger-menu-logo'>
+            <div></div>
+            <div className='second'></div>
         </div>
-        <div className="side-navbar text-white">
-            <div className="side-navbar-main ">
-                <div className={`side-navbar-main-content fixed ${navbarOpen ? "left-0":"left-[-160px]"} `}>
-                    <div onClick={onNavbarClick} className='burger-menu cursor-pointer '>
-                        <div className={`burger-menu-bar one transition-transform duration-300 ${navbarOpen ? "transform rotate-[-45deg] translate-y-[7px] ": ""} `}></div>
-                        <div className={`burger-menu-bar two transition-transform duration-300 ${navbarOpen ? "hidden" : ""}`}></div>
-                        <div className={`burger-menu-bar three transition-transform duration-300 ${navbarOpen ? "transform rotate-45 translate-y-[-9px] ": ""} `}></div>
-                    </div>
-                    <div className='flex flex-col'>
-                        <h1 className='text-2xl pt-4 px-2'>Hi, Jatin</h1>
-                        <p className='pl-2'>extra extra</p>
-                        <div className='flex flex-col gap-2 p-2 mt-4'>
-                            {NavLinks.map((link)=>(
-                                <div key={link.id} className=' flex  items-center gap-1 px-2 py-1'>
-                                    {React.createElement(link.icon, { style: { color: link.color } })}
-                                    <NavLink className='px-4 py-1 rounded-md' to={link.link} key={link.id}>{link.title}</NavLink>
-                                </div>
-                            ))}
-                        </div>
-                        <button  onClick={onLogout} className='m-2 px-4 py-2 rounded-md bg-red-600 hover:bg-red-500 transition-transform duration-300 '>Logout</button>   
-                    </div>
-                </div>
+        {/* <div className='navbar-display-name uppercase font-semibold text-[16px]'>
+            Hi, {user.firstname}
+        </div> */}
+        <div className='relative' style={{color:"#3B3B3B"}}>
+            <div className='absolute top-[-5px] right-[22px] w-[22px] text-xs text-white bg-red-500 flex items-center justify-center rounded-full'>
+                4{/* ---------------Notification------------------ */}
             </div>
+            <GoBellFill style={{fontSize:"22px"}} />
         </div>
+
+
+
     </div>
   )
 }

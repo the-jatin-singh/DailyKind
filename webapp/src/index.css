@@ -6,11 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .app{
   height: 100dvh;
   max-width: 1200px;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(255, 255, 255);
   margin: auto;
 }

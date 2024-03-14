@@ -1,0 +1,128 @@
+.home-container{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    padding-top: 110px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3B3B3B;
+}
+
+.home-container .main-container{
+    width: 84vw;
+    background-color: #fff;
+    padding: 26px 23px;
+    border-radius: 13px;
+    border: 1px solid #EDEDED;
+}
+
+.home-container .hidden-main{
+    height: 0px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.home-container .hidden-main p{
+    font-size: 15px;
+}
+
+.home-container .hidden-main .hidden-main_button{
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.home-container .hidden-main .hidden-main_button>*{
+    padding: 6px 18px;
+    border-radius: 23px;
+}
+
+.home-container .hidden-main .hidden-main_button-done{
+    border: 1px rgba(59, 255, 15, 0.527) solid;
+    color: #00e22d;
+    transition: 0.05s ease;
+}
+
+.home-container .hidden-main .hidden-main_button-skip{
+    border: 1px rgba(255, 15, 15, 0.266) solid;
+    color: #e20000;
+    transition: 0.05s ease;
+}
+
+.hidden-main_button-done:active, .hidden-main_button-skip:active {
+    transform: scale(0.9);
+
+  }
+
+.home-container .main-container h1{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.HOT {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90vw;
+    border: 1px #EDEDED solid;
+    padding: 4vw;
+    border-radius: 13px;
+}
+
+.HOT .item{
+    padding: 3vw;
+    border: 1px #EDEDED solid;
+    border-radius: 13px;
+    background-color: #fff;
+}
+
+.daily-streak-icon{
+    min-width: 86px;
+    min-height: 86px;
+    overflow: hidden;
+    background-color: #c5c5c5; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.daily-streak-table {
+    background-color: #fff;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+.daily-streak-table .false {
+    color:#ff0000;
+}
+
+.daily-streak-table .true {
+    color: #00e22d;
+}
+
+.daily-streak-table .row {
+    display: table-row;
+    text-align: center;
+}
+  
+.daily-streak-table .cell {
+    font-size: 11px;
+    display: table-cell;
+    padding: 2px 0;
+    width: calc(100% / 7);
+}
+  
+.daily-streak-table .cell.icon>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
